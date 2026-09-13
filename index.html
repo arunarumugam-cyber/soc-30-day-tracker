@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SOC Analyst 30-Day Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🛡️ SOC Analyst 30-Day Tracker</h1>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+
+        <h2>🎯 30-Day Target</h2>
+
+        <p>
+            Completed Days:
+            <span id="completedCount">0</span> / 30
+        </p>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+        <p>
+            Progress:
+            <span id="progressText">0%</span>
+        </p>
+
+    </div>
+
+
+    <!-- Study Timer -->
+    <div class="timer-box">
+
+        <h2>⏱️ Study Timer</h2>
+
+        <div id="timer">
+            00:00:00
+        </div>
+
+        <button onclick="startTimer()">
+            Start
+        </button>
+
+        <button onclick="pauseTimer()">
+            Pause
+        </button>
+
+        <button onclick="resetTimer()">
+            Reset
+        </button>
+
+        <p>
+            Total Study Time:
+            <strong id="totalStudyTime">
+                0h 0m
+            </strong>
+        </p>
+
+    </div>
+
+
+    <!-- Daily SOC Topics -->
+    <div id="dayList"></div>
+
+
+    <!-- Reset -->
+    <button class="reset-button" onclick="resetProgress()">
+        Reset All Progress
+    </button>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
