@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,73 +11,117 @@
 
 <body>
 
-    <h1>🛡️ SOC Analyst 30-Day Tracker</h1>
+    <header class="hero">
+        <h1>🛡️ SOC Analyst 30-Day Tracker</h1>
+        <p>30 Days → SOC Analyst Job Ready</p>
+        <p class="date-range">September 13, 2026 → October 13, 2026</p>
+    </header>
+
 
     <!-- Dashboard -->
-    <div class="dashboard">
 
-        <h2>🎯 30-Day Target</h2>
+    <section class="dashboard">
 
-        <p>
-            Completed Days:
-            <span id="completedCount">0</span> / 30
-        </p>
+        <h2>📊 Overall Progress</h2>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <span>Completed Days</span>
+                <strong>
+                    <span id="completedCount">0</span> / 30
+                </strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed Tasks</span>
+                <strong id="conceptCount">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Overall Progress</span>
+                <strong id="progressText">0%</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Total Study Time</span>
+                <strong id="totalStudyTime">0h 0m</strong>
+            </div>
+
+        </div>
+
 
         <div class="progress-container">
             <div id="progressBar"></div>
         </div>
 
-        <p>
-            Progress:
-            <span id="progressText">0%</span>
-        </p>
-
-    </div>
+    </section>
 
 
     <!-- Study Timer -->
-    <div class="timer-box">
 
-        <h2>⏱️ Study Timer</h2>
+    <section class="timer-box">
+
+        <h2>⏱️ Day-wise Study Timer</h2>
+
+        <p>
+            Selected Day:
+            <select id="timerDaySelect"></select>
+        </p>
 
         <div id="timer">
             00:00:00
         </div>
 
-        <button onclick="startTimer()">
-            Start
-        </button>
+        <div class="timer-buttons">
 
-        <button onclick="pauseTimer()">
-            Pause
-        </button>
+            <button onclick="startTimer()">
+                ▶ Start
+            </button>
 
-        <button onclick="resetTimer()">
-            Reset
-        </button>
+            <button onclick="pauseTimer()">
+                ⏸ Pause
+            </button>
+
+            <button onclick="resetTimer()">
+                🔄 Reset Current Session
+            </button>
+
+        </div>
 
         <p>
-            Total Study Time:
-            <strong id="totalStudyTime">
+            Current Day Study Time:
+            <strong id="currentDayStudyTime">
                 0h 0m
             </strong>
         </p>
 
-    </div>
+    </section>
 
 
-    <!-- Daily SOC Topics -->
-    <div id="dayList"></div>
+    <!-- 30 Days -->
+
+    <main id="dayList"></main>
 
 
     <!-- Reset -->
-    <button class="reset-button" onclick="resetProgress()">
-        Reset All Progress
-    </button>
+
+    <section class="reset-section">
+
+        <button class="reset-button" onclick="resetProgress()">
+            ⚠️ Reset All Progress
+        </button>
+
+    </section>
+
+
+    <footer>
+        <p>🛡️ SOC Analyst 30-Day Preparation Tracker</p>
+        <p>Learn • Practice • Build Projects • Get Job Ready</p>
+    </footer>
 
 
     <script src="script.js"></script>
 
 </body>
-
 </html>

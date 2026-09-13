@@ -1,381 +1,1026 @@
 const days = [
     {
         day: 1,
-        topic: "SOC Fundamentals",
-        tasks: ["What is SOC?", "SOC Analyst role", "SOC workflow"]
+        title: "SOC Fundamentals 🔴",
+        week: "Week 1 — Foundation + Networking",
+        tasks: [
+            "Cybersecurity basics",
+            "SOC என்றால் என்ன?",
+            "SOC Analyst L1/L2/L3",
+            "SOC workflow",
+            "Security event vs alert vs incident",
+            "Threat / vulnerability / risk",
+            "CIA Triad",
+            "Authentication vs Authorization",
+            "Security controls",
+            "SOC Analyst daily responsibilities",
+            "Mini task: SOC workflow practice"
+        ]
     },
     {
         day: 2,
-        topic: "Networking Fundamentals",
-        tasks: ["IP Address", "MAC Address", "DNS", "TCP/UDP"]
+        title: "Networking Fundamentals 🟢",
+        week: "Week 1 — Foundation + Networking",
+        tasks: [
+            "Network basics",
+            "OSI model",
+            "TCP/IP model",
+            "Encapsulation",
+            "IP address",
+            "IPv4",
+            "IPv6",
+            "Public vs Private IP",
+            "Static vs Dynamic IP",
+            "MAC address"
+        ]
     },
     {
         day: 3,
-        topic: "OSI & TCP/IP",
-        tasks: ["OSI Model", "TCP/IP Model", "Ports & Protocols"]
+        title: "Network Protocols 🔴",
+        week: "Week 1 — Foundation + Networking",
+        tasks: [
+            "TCP",
+            "UDP",
+            "TCP 3-way handshake",
+            "Ports",
+            "Common ports",
+            "DNS",
+            "DHCP",
+            "ARP",
+            "ICMP",
+            "HTTP",
+            "HTTPS",
+            "SSH",
+            "Commands: ping, ip, ss, nslookup, curl"
+        ]
     },
     {
         day: 4,
-        topic: "Linux Basics",
-        tasks: ["Linux commands", "Users & Groups", "Permissions"]
+        title: "Network Security 🔴",
+        week: "Week 1 — Foundation + Networking",
+        tasks: [
+            "Firewall",
+            "IDS",
+            "IPS",
+            "VPN",
+            "Proxy",
+            "NAT",
+            "Network segmentation",
+            "Inbound vs outbound traffic",
+            "Allowed vs blocked traffic",
+            "Mini task: Network traffic investigation"
+        ]
     },
     {
         day: 5,
-        topic: "Linux Process & System Monitoring",
-        tasks: ["ps", "top", "kill", "System monitoring"]
+        title: "Attacks 🟢/🔴",
+        week: "Week 1 — Foundation + Networking",
+        tasks: [
+            "Malware",
+            "Virus",
+            "Worm",
+            "Trojan",
+            "Ransomware",
+            "Phishing",
+            "Brute force",
+            "DoS/DDoS",
+            "Credential attacks",
+            "Man-in-the-Middle",
+            "Web attacks",
+            "Mini task: Attack identification"
+        ]
     },
     {
         day: 6,
-        topic: "Linux Logs",
-        tasks: ["auth.log", "syslog", "journalctl"]
+        title: "Network Investigation 🔴",
+        week: "Week 1 — Foundation + Networking",
+        tasks: [
+            "Packet",
+            "Packet capture",
+            "Wireshark basics",
+            "Source IP / Destination IP",
+            "Source port / Destination port",
+            "TCP flags",
+            "DNS investigation",
+            "HTTP investigation",
+            "Suspicious traffic identification",
+            "Wireshark lab"
+        ]
     },
     {
         day: 7,
-        topic: "Linux Log Analysis Project",
-        tasks: ["grep", "awk", "sort", "uniq", "Brute-force detection"]
+        title: "Project 1 🔴",
+        week: "Week 1 — Foundation + Networking",
+        tasks: [
+            "Network Security Scanner / Traffic Investigation Project"
+        ]
     },
+
     {
         day: 8,
-        topic: "Windows Fundamentals",
-        tasks: ["Windows users", "Processes", "Services"]
+        title: "Linux Security 🟢/🔴",
+        week: "Week 2 — Linux + Windows Security",
+        tasks: [
+            "Linux filesystem",
+            "Users",
+            "Groups",
+            "Permissions",
+            "chmod",
+            "chown",
+            "sudo",
+            "SSH",
+            "Authentication"
+        ]
     },
     {
         day: 9,
-        topic: "Windows Event Logs",
-        tasks: ["Event Viewer", "Security logs", "Event IDs"]
+        title: "Linux Processes & Services 🔴",
+        week: "Week 2 — Linux + Windows Security",
+        tasks: [
+            "Processes",
+            "PID / PPID",
+            "Services",
+            "ps",
+            "top",
+            "kill",
+            "systemctl",
+            "Suspicious processes"
+        ]
     },
     {
         day: 10,
-        topic: "Authentication & Access",
-        tasks: ["Authentication", "Authorization", "Account attacks"]
+        title: "Linux Logs 🔴",
+        week: "Week 2 — Linux + Windows Security",
+        tasks: [
+            "/var/log",
+            "auth.log",
+            "syslog",
+            "journalctl",
+            "Login events",
+            "Failed login",
+            "Successful login",
+            "Log timestamps",
+            "Log investigation"
+        ]
     },
     {
         day: 11,
-        topic: "Cybersecurity Fundamentals",
-        tasks: ["CIA Triad", "Threat", "Risk", "Vulnerability"]
+        title: "Linux Log Analysis 🔴",
+        week: "Week 2 — Linux + Windows Security",
+        tasks: [
+            "grep",
+            "awk",
+            "sort",
+            "uniq",
+            "cut",
+            "head / tail",
+            "find",
+            "Log filtering",
+            "Brute-force detection"
+        ]
     },
     {
         day: 12,
-        topic: "Common Cyber Attacks",
-        tasks: ["Brute Force", "DoS", "MITM", "Credential attacks"]
+        title: "Windows Security 🔴",
+        week: "Week 2 — Linux + Windows Security",
+        tasks: [
+            "Windows users/groups",
+            "Processes",
+            "Services",
+            "Event Viewer",
+            "Windows Event Logs",
+            "Security logs",
+            "PowerShell basics",
+            "whoami /groups",
+            "Logon events",
+            "Process creation events"
+        ]
     },
     {
         day: 13,
-        topic: "Malware Fundamentals",
-        tasks: ["Virus", "Worm", "Trojan", "Ransomware"]
+        title: "Windows Investigation 🔴",
+        week: "Week 2 — Linux + Windows Security",
+        tasks: [
+            "Failed authentication",
+            "Successful authentication",
+            "Account lockout",
+            "Suspicious process",
+            "PowerShell activity",
+            "Windows security events",
+            "Event IDs",
+            "Windows log investigation"
+        ]
     },
     {
         day: 14,
-        topic: "Phishing Analysis",
-        tasks: ["Phishing indicators", "Email headers", "Suspicious links"]
+        title: "Project 2 🔴",
+        week: "Week 2 — Linux + Windows Security",
+        tasks: [
+            "Linux SOC Log Analyzer",
+            "Failed logins",
+            "Successful logins",
+            "Top attacker IP",
+            "Brute-force detection",
+            "Security alert"
+        ]
     },
+
     {
         day: 15,
-        topic: "Network Security",
-        tasks: ["Firewall", "IDS", "IPS", "VPN"]
+        title: "SIEM 🔴",
+        week: "Week 3 — SIEM + SOC Operations + Incident Response",
+        tasks: [
+            "What is SIEM?",
+            "SIEM architecture",
+            "Log collection",
+            "Log ingestion",
+            "Log parsing",
+            "Log normalization",
+            "Log correlation",
+            "SIEM dashboard",
+            "SIEM alert"
+        ]
     },
     {
         day: 16,
-        topic: "SIEM Fundamentals",
-        tasks: ["What is SIEM?", "Log collection", "Correlation"]
+        title: "SIEM Investigation 🔴",
+        week: "Week 3 — SIEM + SOC Operations + Incident Response",
+        tasks: [
+            "Searching logs",
+            "Filtering events",
+            "Time-range investigation",
+            "Source IP investigation",
+            "User investigation",
+            "Event correlation",
+            "Detection rules",
+            "Threshold detection",
+            "Alert generation"
+        ]
     },
     {
         day: 17,
-        topic: "SIEM Log Analysis",
-        tasks: ["Search logs", "Create alerts", "Analyze events"]
+        title: "Alert Triage 🔴",
+        week: "Week 3 — SIEM + SOC Operations + Incident Response",
+        tasks: [
+            "Alert triage",
+            "Alert validation",
+            "False positive",
+            "True positive",
+            "Severity",
+            "Priority",
+            "Alert enrichment",
+            "Escalation",
+            "Ticket creation"
+        ]
     },
     {
         day: 18,
-        topic: "Splunk Basics",
-        tasks: ["Splunk interface", "Search", "SPL basics"]
+        title: "Incident Response 🔴",
+        week: "Week 3 — SIEM + SOC Operations + Incident Response",
+        tasks: [
+            "Incident response",
+            "Preparation",
+            "Detection",
+            "Analysis",
+            "Containment",
+            "Eradication",
+            "Recovery",
+            "Lessons learned",
+            "Incident documentation"
+        ]
     },
     {
         day: 19,
-        topic: "IOC & Threat Intelligence",
-        tasks: ["IP IOC", "Domain IOC", "Hash IOC"]
+        title: "Threat Detection 🔴",
+        week: "Week 3 — SIEM + SOC Operations + Incident Response",
+        tasks: [
+            "Brute-force detection",
+            "Phishing detection",
+            "Malware detection",
+            "Suspicious login",
+            "Privilege escalation",
+            "Persistence",
+            "Lateral movement",
+            "Command & Control",
+            "Data exfiltration"
+        ]
     },
     {
         day: 20,
-        topic: "MITRE ATT&CK",
-        tasks: ["Tactics", "Techniques", "Attack mapping"]
+        title: "SOC Investigation 🔴",
+        week: "Week 3 — SIEM + SOC Operations + Incident Response",
+        tasks: [
+            "Timeline analysis",
+            "User behavior",
+            "Process behavior",
+            "Network behavior",
+            "IOC identification",
+            "Attack chain",
+            "Root cause",
+            "Severity assessment",
+            "Response decision"
+        ]
     },
     {
         day: 21,
-        topic: "Alert Investigation",
-        tasks: ["Alert triage", "False positive", "Severity"]
+        title: "Project 3 🔴",
+        week: "Week 3 — SIEM + SOC Operations + Incident Response",
+        tasks: [
+            "SIEM-Style Brute Force Detection & Alert System"
+        ]
     },
+
     {
         day: 22,
-        topic: "Incident Response",
-        tasks: ["Identification", "Containment", "Eradication", "Recovery"]
+        title: "IOC + Threat Intelligence 🔴",
+        week: "Week 4 — Threat Intelligence + MITRE + Advanced SOC",
+        tasks: [
+            "IOC",
+            "IP IOC",
+            "Domain IOC",
+            "URL IOC",
+            "File hash",
+            "Email IOC",
+            "IOC enrichment",
+            "Threat reputation",
+            "Threat intelligence",
+            "Threat feeds"
+        ]
     },
     {
         day: 23,
-        topic: "SOC Investigation",
-        tasks: ["Timeline", "Evidence", "Investigation process"]
+        title: "Phishing 🔴",
+        week: "Week 4 — Threat Intelligence + MITRE + Advanced SOC",
+        tasks: [
+            "Phishing",
+            "Spear phishing",
+            "Business Email Compromise",
+            "Malicious URL",
+            "Suspicious domain",
+            "Email headers",
+            "Sender analysis",
+            "Attachment analysis",
+            "Phishing investigation"
+        ]
     },
     {
         day: 24,
-        topic: "Python for SOC",
-        tasks: ["Python basics", "File handling", "Log parsing"]
+        title: "MITRE ATT&CK 🔴",
+        week: "Week 4 — Threat Intelligence + MITRE + Advanced SOC",
+        tasks: [
+            "MITRE ATT&CK",
+            "Tactics",
+            "Techniques",
+            "Procedures",
+            "Initial Access",
+            "Execution",
+            "Persistence",
+            "Privilege Escalation",
+            "Defense Evasion",
+            "Credential Access",
+            "Map alerts to MITRE"
+        ]
     },
     {
         day: 25,
-        topic: "Python SOC Project",
-        tasks: ["Log parser", "IP detection", "Alert generation"]
+        title: "MITRE Continued 🔴",
+        week: "Week 4 — Threat Intelligence + MITRE + Advanced SOC",
+        tasks: [
+            "Discovery",
+            "Lateral Movement",
+            "Collection",
+            "Command & Control",
+            "Exfiltration",
+            "Impact",
+            "Technique mapping",
+            "Attack-chain mapping",
+            "Map alerts to MITRE"
+        ]
     },
     {
         day: 26,
-        topic: "SOC Analyst Scenarios",
-        tasks: ["Brute-force scenario", "Phishing scenario", "Malware scenario"]
+        title: "EDR + Endpoint Security 🔴",
+        week: "Week 4 — Threat Intelligence + MITRE + Advanced SOC",
+        tasks: [
+            "EDR",
+            "Endpoint telemetry",
+            "Process monitoring",
+            "File activity",
+            "Network activity",
+            "Suspicious PowerShell",
+            "Malware behavior",
+            "Endpoint investigation",
+            "EDR vs Antivirus"
+        ]
     },
     {
         day: 27,
-        topic: "SOC Mini Project",
-        tasks: ["Build project", "Analyze logs", "Generate report"]
+        title: "Security Tools 🟢/🔴",
+        week: "Week 4 — Threat Intelligence + MITRE + Advanced SOC",
+        tasks: [
+            "Wireshark",
+            "Nmap",
+            "SIEM",
+            "EDR",
+            "IDS/IPS",
+            "Firewall",
+            "Threat intelligence platforms",
+            "VirusTotal concepts",
+            "Git/GitHub for projects"
+        ]
     },
     {
         day: 28,
-        topic: "Resume & GitHub",
-        tasks: ["SOC resume", "GitHub projects", "Project explanation"]
+        title: "Project 4 🔴",
+        week: "Week 4 — Threat Intelligence + MITRE + Advanced SOC",
+        tasks: [
+            "Phishing + IOC Investigation System"
+        ]
     },
+
     {
         day: 29,
-        topic: "SOC Interview Preparation",
-        tasks: ["Technical questions", "Scenario questions", "HR questions"]
+        title: "Final Project 🔥",
+        week: "Days 29–30 — Final Project + Job Preparation",
+        tasks: [
+            "Real-Time SOC Log Monitoring & Brute-Force Detection",
+            "Linux Authentication Logs",
+            "Real-Time Log Monitor",
+            "Log Parser",
+            "Failed Login Detection",
+            "IP/User Analysis",
+            "Threshold Detection",
+            "SOC Alert",
+            "IOC Investigation",
+            "MITRE ATT&CK Mapping",
+            "Severity",
+            "Incident Report"
+        ]
     },
     {
         day: 30,
-        topic: "Final Revision & Mock Interview",
-        tasks: ["Revise concepts", "Mock interview", "Job readiness check"]
+        title: "Job Preparation 🔥",
+        week: "Days 29–30 — Final Project + Job Preparation",
+        tasks: [
+            "Final project documentation",
+            "GitHub repository",
+            "README",
+            "Screenshots",
+            "Resume project section",
+            "SOC Analyst skills section",
+            "Self-introduction",
+            "Technical interview",
+            "Scenario-based interview",
+            "HR questions",
+            "Project explanation",
+            "Mock SOC investigation"
+        ]
     }
 ];
 
-let timerSeconds = 0;
-let timerInterval = null;
+const STORAGE_KEY = "socTrackerV3";
 
-const dayList = document.getElementById("dayList");
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+    completed: {},
+    notes: {},
+    studyTime: {}
+};
 
-function getProgress() {
-    return JSON.parse(localStorage.getItem("socProgress")) || {};
+let timer = {
+    running: false,
+    day: 1,
+    startTime: 0,
+    sessionSeconds: 0,
+    interval: null
+};
+
+
+// -------------------- SAVE --------------------
+
+function saveState() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-function saveProgress(progress) {
-    localStorage.setItem("socProgress", JSON.stringify(progress));
+
+// -------------------- FORMAT TIME --------------------
+
+function formatTime(seconds) {
+    seconds = Math.max(0, Math.floor(seconds));
+
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = seconds % 60;
+
+    return (
+        String(h).padStart(2, "0") + ":" +
+        String(m).padStart(2, "0") + ":" +
+        String(s).padStart(2, "0")
+    );
 }
 
-function loadProgress() {
-    const progress = getProgress();
 
-    days.forEach((day, index) => {
+function formatStudyTime(seconds) {
+    seconds = Math.floor(seconds || 0);
 
-        const card = document.createElement("div");
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+
+    return `${h}h ${m}m`;
+}
+
+
+// -------------------- RENDER DAYS --------------------
+
+function renderDays() {
+
+    const container = document.getElementById("dayList");
+
+    container.innerHTML = "";
+
+    let currentWeek = "";
+
+    days.forEach(day => {
+
+        if (day.week !== currentWeek) {
+
+            currentWeek = day.week;
+
+            const weekTitle = document.createElement("div");
+
+            weekTitle.className = "week-title";
+
+            weekTitle.innerHTML = `
+                <h2>${currentWeek}</h2>
+            `;
+
+            container.appendChild(weekTitle);
+        }
+
+
+        const card = document.createElement("section");
+
         card.className = "day-card";
 
-        const completed = progress[index]?.completed || false;
-        const notes = progress[index]?.notes || "";
 
-        card.innerHTML = `
-            <h3>Day ${day.day} - ${day.topic}</h3>
+        const header = document.createElement("div");
 
-            <p><strong>Tasks:</strong></p>
+        header.className = "day-header";
 
-            <ul>
-                ${day.tasks.map(task => `<li>${task}</li>`).join("")}
-            </ul>
 
-            <label>
+        header.innerHTML = `
+            <div>
+                <h2>Day ${day.day} — ${day.title}</h2>
+                <p id="dayProgress-${day.day}">
+                    0 / ${day.tasks.length} tasks completed
+                </p>
+            </div>
+
+            <label class="day-complete">
                 <input
                     type="checkbox"
-                    onchange="updateProgress(${index})"
-                    ${completed ? "checked" : ""}
+                    id="dayComplete-${day.day}"
+                    onchange="toggleDayComplete(${day.day})"
                 >
-                Completed
+                Day Complete
             </label>
-
-            <br><br>
-
-            <label><strong>Daily Notes:</strong></label>
-
-            <textarea
-                id="notes-${index}"
-                rows="3"
-                placeholder="Write what you learned today..."
-                oninput="saveNotes(${index})"
-            >${notes}</textarea>
         `;
 
-        dayList.appendChild(card);
+
+        card.appendChild(header);
+
+
+        const taskList = document.createElement("div");
+
+        taskList.className = "task-list";
+
+
+        day.tasks.forEach((task, index) => {
+
+            const key = `${day.day}-${index}`;
+
+            const label = document.createElement("label");
+
+            label.className = "task";
+
+
+            label.innerHTML = `
+                <input
+                    type="checkbox"
+                    ${state.completed[key] ? "checked" : ""}
+                    onchange="toggleTask('${key}', ${day.day})"
+                >
+
+                <span>${index + 1}. ${task}</span>
+            `;
+
+
+            taskList.appendChild(label);
+        });
+
+
+        card.appendChild(taskList);
+
+
+        const noteTitle = document.createElement("h3");
+
+        noteTitle.innerText = "📝 Daily Notes";
+
+        card.appendChild(noteTitle);
+
+
+        const textarea = document.createElement("textarea");
+
+        textarea.placeholder =
+            "Write what you learned, commands practiced, doubts, interview points...";
+
+        textarea.value = state.notes[day.day] || "";
+
+
+        textarea.addEventListener("input", function () {
+
+            state.notes[day.day] = this.value;
+
+            saveState();
+        });
+
+
+        card.appendChild(textarea);
+
+
+        const timeInfo = document.createElement("p");
+
+        timeInfo.className = "day-study-time";
+
+        timeInfo.innerHTML = `
+            ⏱️ Study Time:
+            <strong id="dayTime-${day.day}">
+                ${formatStudyTime(state.studyTime[day.day] || 0)}
+            </strong>
+        `;
+
+        card.appendChild(timeInfo);
+
+
+        container.appendChild(card);
+
+        updateDayProgress(day.day);
     });
 
+
+    populateTimerSelect();
+}
+
+
+// -------------------- TASK CHECKBOX --------------------
+
+function toggleTask(key, dayNumber) {
+
+    const checkbox = document.querySelector(
+        `.task input[onchange="toggleTask('${key}', ${dayNumber})"]`
+    );
+
+    state.completed[key] = checkbox.checked;
+
+    saveState();
+
+    updateDayProgress(dayNumber);
+
     updateDashboard();
 }
 
-function updateProgress(index) {
 
-    const progress = getProgress();
+// -------------------- DAY COMPLETE --------------------
 
-    const checkbox = document.querySelectorAll(
-        '#dayList input[type="checkbox"]'
-    )[index];
+function toggleDayComplete(dayNumber) {
 
-    if (!progress[index]) {
-        progress[index] = {};
-    }
+    const checkbox =
+        document.getElementById(`dayComplete-${dayNumber}`);
 
-    progress[index].completed = checkbox.checked;
+    days[dayNumber - 1].tasks.forEach((task, index) => {
 
-    saveProgress(progress);
+        const key = `${dayNumber}-${index}`;
+
+        state.completed[key] = checkbox.checked;
+    });
+
+
+    saveState();
+
+    renderDays();
 
     updateDashboard();
 }
 
-function saveNotes(index) {
 
-    const progress = getProgress();
+// -------------------- DAY PROGRESS --------------------
 
-    if (!progress[index]) {
-        progress[index] = {};
-    }
+function updateDayProgress(dayNumber) {
 
-    const notes = document.getElementById(`notes-${index}`).value;
-
-    progress[index].notes = notes;
-
-    saveProgress(progress);
-}
-
-function updateDashboard() {
-
-    const progress = getProgress();
+    const day = days[dayNumber - 1];
 
     let completed = 0;
 
-    days.forEach((day, index) => {
-        if (progress[index]?.completed) {
+
+    day.tasks.forEach((task, index) => {
+
+        const key = `${dayNumber}-${index}`;
+
+        if (state.completed[key]) {
             completed++;
         }
     });
 
-    const percentage = Math.round(
-        (completed / days.length) * 100
-    );
 
-    document.getElementById("completedCount").textContent =
-        completed;
+    const progressElement =
+        document.getElementById(`dayProgress-${dayNumber}`);
 
-    document.getElementById("progressText").textContent =
-        percentage + "%";
+    if (progressElement) {
 
-    document.getElementById("progressBar").style.width =
-        percentage + "%";
-}
+        progressElement.innerText =
+            `${completed} / ${day.tasks.length} tasks completed`;
+    }
 
-function resetProgress() {
 
-    const confirmReset =
-        confirm("Are you sure you want to reset all progress?");
+    const dayCheckbox =
+        document.getElementById(`dayComplete-${dayNumber}`);
 
-    if (confirmReset) {
-        localStorage.removeItem("socProgress");
-        location.reload();
+    if (dayCheckbox) {
+
+        dayCheckbox.checked =
+            completed === day.tasks.length;
     }
 }
 
-loadProgress();
 
-let studySeconds = 0;
-let studyTimer = null;
+// -------------------- DASHBOARD --------------------
+
+function updateDashboard() {
+
+    let completedTasks = 0;
+    let totalTasks = 0;
+    let completedDays = 0;
+    let totalStudySeconds = 0;
+
+
+    days.forEach(day => {
+
+        let dayCompleted = 0;
+
+
+        day.tasks.forEach((task, index) => {
+
+            totalTasks++;
+
+            const key = `${day.day}-${index}`;
+
+            if (state.completed[key]) {
+
+                completedTasks++;
+                dayCompleted++;
+            }
+        });
+
+
+        if (dayCompleted === day.tasks.length) {
+
+            completedDays++;
+        }
+
+
+        totalStudySeconds +=
+            state.studyTime[day.day] || 0;
+    });
+
+
+    const progress =
+        totalTasks === 0
+            ? 0
+            : Math.round((completedTasks / totalTasks) * 100);
+
+
+    document.getElementById("completedCount").innerText =
+        completedDays;
+
+
+    document.getElementById("conceptCount").innerText =
+        `${completedTasks} / ${totalTasks}`;
+
+
+    document.getElementById("progressText").innerText =
+        `${progress}%`;
+
+
+    document.getElementById("progressBar").style.width =
+        `${progress}%`;
+
+
+    document.getElementById("totalStudyTime").innerText =
+        formatStudyTime(totalStudySeconds);
+
+
+    days.forEach(day => {
+
+        const timeElement =
+            document.getElementById(`dayTime-${day.day}`);
+
+        if (timeElement) {
+
+            timeElement.innerText =
+                formatStudyTime(state.studyTime[day.day] || 0);
+        }
+    });
+
+
+    updateCurrentTimerDisplay();
+}
+
+
+// -------------------- TIMER SELECT --------------------
+
+function populateTimerSelect() {
+
+    const select =
+        document.getElementById("timerDaySelect");
+
+    select.innerHTML = "";
+
+
+    days.forEach(day => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = day.day;
+
+        option.innerText =
+            `Day ${day.day} — ${day.title}`;
+
+
+        select.appendChild(option);
+    });
+
+
+    select.value = timer.day;
+
+
+    select.addEventListener("change", function () {
+
+        if (timer.running) {
+            pauseTimer();
+        }
+
+        timer.day = Number(this.value);
+
+        timer.sessionSeconds = 0;
+
+        updateCurrentTimerDisplay();
+    });
+}
+
+
+// -------------------- TIMER --------------------
+
+function getCurrentSessionSeconds() {
+
+    if (!timer.running) {
+        return timer.sessionSeconds;
+    }
+
+
+    return timer.sessionSeconds +
+        Math.floor((Date.now() - timer.startTime) / 1000);
+}
+
+
+function updateCurrentTimerDisplay() {
+
+    const seconds =
+        getCurrentSessionSeconds();
+
+
+    document.getElementById("timer").innerText =
+        formatTime(seconds);
+
+
+    document.getElementById("currentDayStudyTime").innerText =
+        formatStudyTime(
+            (state.studyTime[timer.day] || 0) + seconds
+        );
+}
+
 
 function startTimer() {
 
-    if (studyTimer !== null) {
+    if (timer.running) {
         return;
     }
 
-    studyTimer = setInterval(() => {
 
-        studySeconds++;
+    timer.startTime = Date.now();
 
-        displayTimer();
+    timer.running = true;
 
-    }, 1000);
+
+    timer.interval =
+        setInterval(updateCurrentTimerDisplay, 1000);
+
+
+    updateCurrentTimerDisplay();
 }
 
 
 function pauseTimer() {
 
-    clearInterval(studyTimer);
+    if (!timer.running) {
+        return;
+    }
 
-    studyTimer = null;
 
-    saveStudyTime();
+    const elapsed =
+        Math.floor(
+            (Date.now() - timer.startTime) / 1000
+        );
+
+
+    state.studyTime[timer.day] =
+        (state.studyTime[timer.day] || 0) +
+        elapsed;
+
+
+    timer.sessionSeconds = 0;
+
+    timer.running = false;
+
+    clearInterval(timer.interval);
+
+    timer.interval = null;
+
+    saveState();
+
+    updateCurrentTimerDisplay();
+
+    updateDashboard();
 }
 
 
 function resetTimer() {
 
-    clearInterval(studyTimer);
+    if (timer.running) {
+        pauseTimer();
+    }
 
-    studyTimer = null;
 
-    studySeconds = 0;
+    timer.sessionSeconds = 0;
 
-    displayTimer();
+    updateCurrentTimerDisplay();
 }
 
 
-function displayTimer() {
+// -------------------- RESET ALL --------------------
 
-    const hours = Math.floor(studySeconds / 3600);
+function resetProgress() {
 
-    const minutes =
-        Math.floor((studySeconds % 3600) / 60);
+    const confirmReset =
+        confirm(
+            "Are you sure you want to reset ALL SOC progress, notes and study time?"
+        );
 
-    const seconds =
-        studySeconds % 60;
 
-    document.getElementById("timer").textContent =
-        `${String(hours).padStart(2, "0")}:` +
-        `${String(minutes).padStart(2, "0")}:` +
-        `${String(seconds).padStart(2, "0")}`;
+    if (!confirmReset) {
+        return;
+    }
+
+
+    if (timer.running) {
+        clearInterval(timer.interval);
+    }
+
+
+    state = {
+        completed: {},
+        notes: {},
+        studyTime: {}
+    };
+
+
+    timer.running = false;
+    timer.sessionSeconds = 0;
+
+
+    saveState();
+
+    renderDays();
+
+    updateDashboard();
+
+    updateCurrentTimerDisplay();
 }
 
 
-function saveStudyTime() {
+// -------------------- INITIAL LOAD --------------------
 
-    let total =
-        Number(localStorage.getItem("totalStudySeconds")) || 0;
+renderDays();
 
-    total += studySeconds;
+updateDashboard();
 
-    localStorage.setItem(
-        "totalStudySeconds",
-        total
-    );
-
-    studySeconds = 0;
-
-    displayTotalStudyTime();
-}
-
-
-function displayTotalStudyTime() {
-
-    const total =
-        Number(localStorage.getItem("totalStudySeconds")) || 0;
-
-    const hours =
-        Math.floor(total / 3600);
-
-    const minutes =
-        Math.floor((total % 3600) / 60);
-
-    document.getElementById("totalStudyTime").textContent =
-        `${hours}h ${minutes}m`;
-}
-
-
-displayTotalStudyTime();
-displayTimer();
-
+updateCurrentTimerDisplay();
